@@ -1,36 +1,47 @@
 <?php
+// Укажите ваш адрес электронной почты
+$recipientEmail = "fizmattutors@gmail.com";
+
+// Проверка, что запрос пришел методом POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Получаем данные формы
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
+    // Получение и валидация данных
+    $name = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
+    $phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
+    $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
+    $message = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
 
-    // Указываем, на какую почту отправлять сообщение
-    $to = 'your-email@example.com'; // Замените на вашу почту
-
-    // Тема письма
-    $subject = "Нове повідомлення з контактної форми";
-
-    // Сообщение письма
-    $email_message = "Ім'я: $name\n";
-    $email_message .= "Email: $email\n";
-    $email_message .= "Повідомлення: \n$message";
-
-    // Заголовки письма
-    $headers = "From: $email" . "\r\n" .
-               "Reply-To: $email" . "\r\n" .
-               "X-Mailer: PHP/" . phpversion();
-
-    // Отправляем письмо
-    if (mail($to, $subject, $email_message, $headers)) {
-        // Сообщение об успешной отправке
-        echo json_encode(['status' => 'success', 'message' => 'Повідомлення відправлено успішно!']);
+    // Проверка обязательных полей для модального окна (Имя, Телефон, Сообщение)
+    if (!empty($name) && !empty($phone) && !empty($message)) {
+        $subject = "Новая заявка с сайта (Модальное окно)";
+        $emailMessage = "Ім'я: $name\n";
+        $emailMessage .= "Телефон: $phone\n";
+        $emailMessage .= "Повідомлення:\n$message\n";
+    }
+    // Проверка обязательных полей для формы на сайте (Имя, Email, Сообщение)
+    elseif (!empty($name) && !empty($email) && !empty($message)) {
+        $subject = "Новая заявка с сайта (Форма на сайте)";
+        $emailMessage = "Ім'я: $name\n";
+        $emailMessage .= "Email: $email\n";
+        $emailMessage .= "Повідомлення:\n$message\n";
     } else {
-        // Сообщение о неудаче
-        echo json_encode(['status' => 'error', 'message' => 'Помилка під час відправлення']);
+        // Если обязательные поля не заполнены
+        echo 'error';
+        exit;
+    }
+
+    // Формирование заголовков письма
+    $headers = "From: no-reply@yourdomain.com\r\n";
+    $headers .= "Reply-To: no-reply@yourdomain.com\r\n";
+    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+
+    // Отправка письма
+    if (mail($recipientEmail, $subject, $emailMessage, $headers)) {
+        echo 'success';
+    } else {
+        echo 'error';
     }
 } else {
-    // Возвращаем ошибку, если запрос не POST
-    echo json_encode(['status' => 'error', 'message' => 'Невірний метод запиту']);
+    // Если запрос не методом POST
+    echo 'error';
 }
 ?>
