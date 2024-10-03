@@ -1,0 +1,2856 @@
+html {
+    scroll-behavior: auto;
+        /* Отключаем плавную прокрутку */
+    }
+    
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+     /*height: 900vh;
+     Высота 9 экранов для вертикального скроллинга */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    overflow-x: hidden; 
+    min-height: 100vh;
+}
+
+
+.fon {
+    flex: 1;
+    flex-direction: column;
+        
+    background-position: top;
+    /*фоновые изображения выравниваются вверху*/
+    background-size: cover;
+    /* Оригинальный размер изображений */
+    background-repeat: no-repeat;
+    /*Отключить повторение изображения */
+    background-image: url('fon_1.svg');
+    height: 1550px;
+    width: 100%;
+ 
+}
+
+.fon1 {
+    background-position: top;
+        /*фоновые изображения выравниваются вверху */
+    background-size: cover;
+    background-repeat: no-repeat;
+        /*Отключить повторение изображения */
+    background-image: url('fon_7.svg');
+    height: 100%;
+    margin-top: 100px;
+    padding: 0px;
+    border: 1px solid #a41919;
+    width: 100%;
+}
+    
+
+.fon2 {
+     background-position: bottom;
+    /* фоновые изображения выравниваются снизу*/
+     background-size: cover;
+     background-repeat: no-repeat;
+    /* Отключить повторение изображения */
+     background-image: url('fon_5.svg');
+     height: 100%;
+     margin-top: 0px;
+     padding-top: 0px;
+     padding-bottom: 50px;
+    border: 1px solid #1532d5;
+    width: 100%;
+    margin-bottom: -20px;
+    margin-top: 0px;
+    background-position: center top 300px;
+        /* Сдвигаем фон вниз на 20px от нижней границы блока */
+     }
+
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+nav {
+    position: fixed;
+    /* Убедитесь, что меню всегда фиксировано наверху */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Чтобы меню было поверх всех элементов */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(255, 255, 255, 0);
+    Прозрачный темный фон при загрузке */
+    padding: 10px 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Анимация изменения цвета фона и тени */
+    box-shadow: none;
+    /* Изначально нет тени */
+    z-index: 1000;    
+}
+
+.navbar.scrolled {
+    background-color: #0cb2cc;
+    /* Сплошной цвет фона при прокрутке */
+    box-shadow: 0px 2px 20px rgba(1, 36, 26, 0.7);
+    /* Тень под меню при прокрутке */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Расстояние между элементами */
+}
+
+.image-block img {
+    height: 65px;
+    width: auto;
+    /* Сохранение пропорций */
+}
+
+.vertical-line {
+    width: 1px;
+    height: 70px;
+    /* Высота полоски */
+    background-color: #fff;
+    /* Цвет полоски */
+}
+
+
+.text-block {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    word-spacing: 5px;
+    line-height: 1.5;
+    margin-bottom: 0px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+        /* Межстрочный интервал */
+    display: flex;
+    flex-direction: column;
+        /* Размещение текста в две строки */
+    justify-content: center;
+        /* Вертикальное центрирование текста */
+}
+
+.kont {
+    display: flex;
+    align-items: center;
+        /* Выравнивание элементов по вертикали */
+    gap: 10px;
+        /* Расстояние между изображением и текстом */
+    margin-top: 3px;
+        /* Можно регулировать дополнительное пространство между блоками */
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+            
+}
+
+.kont-icon {
+    width: 32px;
+    /* Задайте нужные размеры для иконки */
+    height: auto;
+}
+
+.kont-icon1 {
+    width: 36px;
+    /* Задайте нужные размеры для иконки */
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    }
+
+.menu li {
+        margin: 0 20px;
+}
+.menu-icon {
+    height: 20px;
+    /* Задайте нужную высоту изображения */
+    width: auto;
+    /* Сохраняет пропорции изображения */
+    margin-right: 18px;
+    /* Отступ между изображением и текстом */
+}
+
+.menu-icon-replacement {
+        height: 25px;
+        /* Задайте нужную высоту изображения */
+        width: auto;
+        /* Сохраняет пропорции изображения */
+       margin-right: 80px;
+        /* Отступ между изображением и текстом */
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+.expandable a img {
+    display: block;
+    /* Убирает нижний отступ у изображения */
+}
+.expandable a {
+    display: flex;
+    align-items: left;
+    /* Вертикальное выравнивание по центру */
+    text-decoration: none;
+    color: inherit;
+    /* Сохраняет цвет текста */
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    /* Добавляем позиционирование */
+    cursor: pointer;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    /* Расстояние до текста */
+    width: 100%;
+    border-bottom: 0.5px solid #ffffff;
+    /* Тонкая линия */
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+    padding-bottom: 4px;
+    /* Увеличение расстояния между линией и текстом */
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.call-button button  {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    /* Скругление углов кнопки */
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    
+}
+
+.call-button-mob button {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    /* Скругление углов кнопки */
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    margin-top: 20px;
+
+}
+
+
+/* Скрываем расширяемый контент по умолчанию */
+#expandedContent.hidden {
+    display: none;
+}
+
+/* Показываем расширяемый контент при добавлении класса visible */
+nav {
+    position: relative;
+    /* Контейнер для относительного позиционирования */
+    z-index: 1;
+    /* Убедитесь, что оно выше других элементов */
+}
+
+#expandedContent {
+    display: flex;
+    position: absolute;
+    /* Абсолютное позиционирование */
+    top: 100%;
+    /* Начало сразу под нерасширенным меню */
+    left: 0;
+    width: 100%;
+    background: #1a97b3;
+    color: white;
+    padding: 20px;
+    justify-content: space-around;
+    z-index: 0;
+    /* Убедитесь, что оно ниже основного меню */
+    box-shadow: 0px 7px 10px rgba(1, 36, 26, 0.4);
+}
+
+#expandedContent.visible {
+    display: flex;
+}
+
+#expandedContent .content-block {
+    flex: 1;
+    margin: 0 10px;
+    font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 20px;
+    
+}
+
+#expandedContent h3 {
+    margin-top: 0;
+}
+
+#expandedContent a {
+    display: block;
+    color: white;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.content-block-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        /* Выравнивание по центру по горизонтали */
+    text-align: center;
+    word-spacing: 10px;
+    padding: 0 20px;
+    position: relative;
+        /* Для вертикальной линии */
+}
+
+.content-block-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Выравнивание по центру по горизонтали */
+    text-align: center;
+    word-spacing: 10px;
+    padding: 0 20px;
+    position: relative;
+    /* Для вертикальной линии */
+}
+
+.content-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    /* Выравнивание по центру по горизонтали */
+    text-align: left;
+    word-spacing: 10px;
+    padding: 0 20px;
+    position: relative;
+    /* Для вертикальной линии */
+    margin-right: 80px;
+}
+
+.content-mob {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    /* Выравнивание по центру по горизонтали */
+    text-align: right;
+    word-spacing: 10px;
+    position: relative;
+    /* Для вертикальной линии */
+    margin-right: 40px;
+    padding-left: 0px;
+}
+
+
+/* Контейнер для ссылок, выравнивающий их по левому краю */
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Выравнивание по левому краю */
+    width: 100%;
+    margin: 0;
+    /* Убираем отступы вокруг контейнера */
+    font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 1px;
+}
+
+.links a {
+padding: 3px 0;
+    /* Добавляем отступы внутри ссылок */
+text-decoration: none;
+position: relative;
+}
+
+.links a h3 {
+    display: inline-block;
+    /* Убедимся, что элемент ведет себя как текст */
+    line-height: 0.2;
+    /* Сжимаем межстрочное расстояние */
+}
+
+
+/* Анимация подчеркивания ссылок */
+.links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: #02f3fb;
+    transition: width 0.3s, left 0.3s;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+/* Вертикальная линия слева от блоков */
+.content-block {
+    position: relative;
+}
+
+.content-block:not(:first-of-type)::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    /* Расстояние от блока до линии */
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #ddd;
+}
+
+/* Удаляем вертикальную линию только у первого блока */
+.content-block:first-of-type::before {
+    content: none;
+}
+
+
+.content {
+        /* Убедитесь, что контент начинается после фиксированного заголовка */
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 130px;
+    flex: 1 1 auto;
+    margin-bottom:20px;
+   
+}
+
+/* Внешний контейнер */
+.outer-container {
+    overflow-x: auto;
+    width: 100%;
+}
+.outer-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.inner-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* анимация изображения */
+.center-container {
+    display: flex;
+    justify-content: center;
+    /* Горизонтальное выравнивание по центру */
+    /* align-items: center;
+     Вертикальное выравнивание по центру */
+    height: 100%;
+    /* Высота равна высоте контейнера */
+    
+}
+
+.container {
+margin-top: 20px;
+display: flex;
+justify-content: space-between;
+    /* Распределение блоков по краям */
+width: 796px;
+    /* Ширина контейнера */
+height: 467px;
+    /* Фиксированная высота контейнера */
+position: relative;
+
+}
+
+.block-left,
+.block-right {
+height: 467px;
+    /* Фиксированная высота блоков */
+background-position: bottom;
+    /* фоновые изображения выравниваются внизу*/
+background-size: auto;
+    /* Оригинальный размер изображений */
+background-repeat: no-repeat;
+    /* Отключить повторение изображения */
+opacity: 0;
+    /* Начальная непрозрачность */
+position: relative;
+    /* Относительное позиционирование */
+bottom: 0;
+    /* Выравнивание по нижней части контейнера */
+}
+
+.block-left {
+width: 572px;
+    /* Ширина блока */
+background-position: right bottom;
+    /* фоновое изображение выравнивается справа*/
+background-repeat: no-repeat;
+    /* Отключить повторение изображения */
+background-image: url('left-image.svg');
+    /* Левое изображение как фон */
+animation: fadeIn 2s forwards;
+    /* Анимация только для изменения прозрачности */
+}
+
+.block-right {
+padding-left: 0px;
+padding-right: 0px;
+margin-left: 0px;
+width: 224px;
+background-position: left bottom; 
+    /* Выровнять изображение по левому краю */
+background-repeat: no-repeat;
+    /* Отключить повторение изображения */
+ background-image: url('right-image_1.svg');
+    /* Правое изображение как фон */
+transform: translateX(100%);
+    /* Начальная позиция за пределами правого края контейнера */
+animation: fadeInMoveRight 2s forwards;
+    /* Анимация для правого блока */
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        /* Конечная непрозрачность */
+    }
+}
+
+@keyframes fadeInMoveRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.cat-container {
+    position: relative;
+    height: 100%;
+        /* Высота контейнера */
+    width: 100%;
+        /* Ширина контейнера */ 
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+        /* Центрируем сам контейнер */
+    max-width: 350px;
+        /* Ограничим максимальную ширину контейнера */
+    display: flex;
+    justify-content: center;
+        /* Центрирует содержимое по горизонтали */    
+    align-items: center;
+        /* Центрирует содержимое по вертикали */
+    
+}
+
+.cat-image {
+    position: relative;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+        /* Убедитесь, что изображение не выходит за пределы контейнера */
+    height: auto;
+        /* Сохраняет пропорции изображения */
+    transform: translateX(100%);
+        /* Начальная позиция - за пределами верхней части */
+    transition: transform 2.0s ease-in-out, opacity 1.5s ease-in-out;
+        /* Добавляем плавный переход для прозрачности */
+    opacity: 0;
+        /* Начальное состояние - невидимо */
+}
+
+.cat-image.active {
+    transform: translateX(0);
+    /* Возвращаемся в исходное положение */
+    opacity: 1;
+    /* Изображение становится видимым */
+}
+
+
+/* Стили для контейнера с текстовыми блоками */
+/* Контейнер для текста */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    border-width: 5;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+}
+hr {
+    border: none;
+    /* Убираем стандартную рамку */
+    height: 1px;
+    /* Высота линии */
+    background-color: rgb(153, 236, 255);
+    /* Цвет линии */
+    width: 100px;
+    margin-top: 30px;
+}
+.text-block,
+.horizontal-block {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Начальное положение для текстовых блоков */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    
+}
+
+.text-block {
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.text-block-1 {
+transition-delay: 0.5s;
+text-align: center;
+font-family: "Roboto", sans-serif;
+font-weight: 200;
+font-style: normal;
+font-size: 40px;
+line-height: 56px;
+color: #fff;
+margin-top: 30px;
+}
+
+.text-block-2 {
+transition-delay: 0.8s;
+font-family: "Roboto", sans-serif;
+font-weight: 300;
+font-style: normal;
+font-size: 28px;
+line-height: 49px;
+word-spacing: 10px;
+color: #fff;
+text-align: center;
+}
+
+.text-block-3 {
+transition-delay: 1.0s;
+font-family: "Roboto", sans-serif;
+font-weight: 300;
+font-style: normal;
+font-size: 24px;
+line-height: 35px;
+word-spacing: 5px;
+color: #013054;
+}
+
+/* Новый стиль для списков */
+ul {
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+/* блок с услугами */
+.horizontal-blocks-container {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+flex-wrap: wrap;
+/* Разрешить перенос блоков на новую строку */
+border-width: 5;
+border-color: rgb(175, 241, 155);
+
+border-style: solid;
+
+}
+
+.horizontal-block {
+position: relative;
+/* Родительский блок относительно которого будет позиционироваться кнопка */
+display: flex;
+box-shadow: 20px 20px 25px rgba(28, 87, 93, 0.1);
+overflow-wrap: break-word;
+/* Перенос длинных слов */
+width: 100%;
+max-width: 340px;
+/* Ограничение максимальной ширины */
+flex: 1 1 80%;
+/* Блоки могут изменять ширину до 80% */
+line-height: 35px;
+border: 1px solid #fff;
+flex-direction: column;
+align-items: center;
+transform: translateY(-100px);
+/* Начальное положение для горизонтальных блоков */
+background-position: top;
+/* фоновые изображения выравниваются вверху*/
+background-size: cover;
+background-repeat: no-repeat;
+/* Отключить повторение изображения */
+background-image: url('fon_3.svg');
+height: 480px;
+margin-top: 25px;
+}
+
+.horizontal-block:hover {
+    background-image: none; /* Убираем фоновое изображение */
+    color: #ffffff;
+    /* Цвет текста при наведении */
+    background-color: #2f7b8d;
+}
+
+.horizontal-block h3,
+.horizontal-block ul,
+.horizontal-block button {
+    max-width: 100%;
+    /* Ограничение максимальной ширины текста */
+    overflow: hidden;
+    /* Скрытие текста, выходящего за пределы блока */
+    text-overflow: ellipsis;
+    /* Добавление многоточия для длинного текста */
+    white-space: nowrap;
+    /* Отключение переноса строк (для заголовков и кнопок) */
+}
+
+.horizontal-block img {
+    width:auto;
+    height: 55px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.horizontal-block h3 {
+    margin: 10px 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 24px;
+    color:#013862
+}
+
+.horizontal-block ul {
+    list-style-type: disc;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: left;
+    /* Выровнять текст по левому краю */
+    font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 18px;
+        color: #4d80a7
+        
+}
+
+.horizontal-block button {
+    position: absolute;
+           bottom: 30px;
+        /* Фиксированное расстояние от нижнего края блока */
+        left: 50%;
+        /* Центрирование кнопки по горизонтали */
+        transform: translateX(-50%);
+        /* Центрирование кнопки по горизонтали */
+    padding: 10px 20px;
+    background-color: #05d0ac;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        border-radius: 5px;
+            /* Скругление углов кнопки */
+}
+
+.horizontal-block:hover h3,
+.horizontal-block:hover ul,
+.horizontal-block:hover button {
+    color: #ffffff;
+    /* Белый цвет текста при наведении */
+}
+
+.horizontal-block:hover button {
+    background-color: transparent;
+    /* Убираем фон кнопки */
+    border: 2px solid #ffffff;
+    /* Белая обводка кнопки */
+    color: #ffffff;
+    /* Белый цвет текста кнопки */
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* Скругление углов кнопки */
+}
+
+/* Возвращаем первоначальный стиль кнопки при наведении на неё */
+.horizontal-block button:hover {
+    background-color: #05d0ac;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    border-radius: 8px;
+    /* Скругление углов кнопки */
+}
+
+.scrolled .text-block {
+    transform: translateY(0);
+}
+
+.scrolled .horizontal-block {
+    transform: translateX(0);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        /* Плавный переход для анимации */
+}
+
+/* Стили для блока с видео */
+.video-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    border-width: 5;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+}
+
+.video-block video {
+    width: 100%;
+    max-width: 800px;
+    /* Ограничение максимальной ширины видео */
+    height: auto;
+    border: 2px solid #ddd;
+    /* Граница вокруг видео */
+    border-radius: 10px;
+    /* Скругленные углы */
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nmt {
+    margin-top: 30px;
+    align-items: center;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.nmt h3{
+    margin-top: 50px;
+    align-items: center;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #9cf4fa;    
+    margin-bottom: 10px;
+}
+
+.horizontal-line {
+    border: 0;
+    /* Убираем стандартные стили рамки */
+    height: 2px;
+    /* Высота линии */
+    background: rgb(153, 236, 255);
+    /* Цвет линии */
+    margin-top: 5px;
+    padding-top: 0px;
+    /* Отступы сверху и снизу */
+}
+
+/* Контейнер для трех блоков */
+.three-blocks {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+        /* Отступ между ссылками */
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+/* Стили для каждого блока */
+.block {
+flex: 1;
+text-align: center;
+width: calc(33.33% - 10px);
+text-decoration: none;
+color: inherit;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border-radius: 10px;
+border: 2px solid #ffffff;
+    /* Белая обводка кнопки */
+}
+
+/* Изображения в блоках */
+.block img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Текст в блоках */
+.block p {
+    margin-top: 10px;
+}
+
+/* Анимация при наведении */
+.block:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Отступы между блоками */
+.three-blocks .block:not(:last-child) {
+    margin-right: 0px;
+}
+
+.text-block-bottom {
+margin-bottom: 50px;
+margin-top: 100px;
+align-items: center;
+text-align: center;
+font-family: "Roboto", sans-serif;
+font-weight: 500;
+font-style: normal;
+font-size: 40px;
+color: #00f0bc;
+}
+
+.tube-button button {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 0px;
+    margin-top: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    /* Скругление углов кнопки */
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 24px;
+
+}
+
+/* Контейнер для карусели */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+        /* Задайте максимальную ширину карусели */
+    margin: 0 auto;
+    overflow: hidden;
+    height: auto;
+        /* Убедитесь, что контейнер имеет фиксированную высоту */
+        border: 1px solid #1532d5;
+        
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    justify-content: flex-start;
+    will-change: transform;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+        /* Подтягиваем содержимое к началу */
+    min-width: 100%;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    word-spacing: 5px;
+    line-height: 1.5;
+    color: #5f949b;
+}
+
+.top-block {
+    padding-bottom: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Стиль для кнопки с текстом */
+.toggle-button {
+    background: transparent;
+    /* Прозрачный фон */
+    border: 1px solid #ff6600;
+        border-radius: 20px;
+    color: #908a85;
+    /* Зеленый текст */
+    font-size: 16px;
+    /* Размер шрифта */
+    cursor: pointer;
+    /* Курсор руки */
+    padding: 5px;
+    /* Убираем внутренние отступы */
+    margin: 0;
+    /* Убираем внешние отступы */
+    display: inline-flex;
+        /* Вложенные элементы */
+    align-items: center;
+        /* Вертикальное выравнивание */
+}
+
+
+/* Скрытие полного текста по умолчанию */
+.full-text-container {
+    display: none;
+    /* Изначально скрыто */
+}
+
+/* Стиль для текста на кнопке */
+.toggle-button .text {
+    margin-right: 10px;
+    /* Отступ между текстом и стрелками */
+    padding-left: 20px;
+    
+}
+
+/* Стиль для стрелок */
+.toggle-button .arrow {
+    font-size: 24px;
+    display: inline-block;
+    color: #05d0ac;
+    /* Зеленый цвет стрелок */
+    margin-left: 5px;
+    /* Отступ между стрелками и текстом */
+    padding-right: 20px;
+}
+
+/* Скрытие стрелок по умолчанию */
+.down-arrow {
+    display: inline-block;
+}
+
+.up-arrow {
+    display: none;
+    /* Изначально скрыто */
+}
+
+.bottom-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-direction: column;
+        /* Изменяем направление на колонку, чтобы кнопка располагалась под текстом */
+    align-items: left;
+        /* Выравнивание элементов по центру */
+    margin-bottom: 20px;
+}
+
+.image-and-text {
+    display: flex;
+    align-items: center;
+    /* Вертикальное выравнивание по центру */
+    margin-left: 100px;
+    margin-top: 0;
+}
+
+.image-and-text img {
+    width: 100px;
+    height: auto;
+    margin-right: 30px;   
+   
+}
+
+.image-and-text .divider {
+    width: 1px;
+    height: 100%;
+    background-color: #8c8a8a;
+    margin: 0 30px;
+}
+
+.image-and-text p {
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: #1a5d66;
+       
+}
+
+.button-container {
+    margin-top: 10px;
+    /* Отступ между текстом и кнопкой */
+    display: flex;
+    justify-content: center;
+    /* Центрируем кнопку */
+    width: 100%;
+    /* Занимает всю ширину родительского блока */
+}
+
+.action-button {
+    padding: 10px 20px;
+    /* Размер кнопки, увеличиваем только если нужно */
+    font-size: 16px;
+    /* Размер шрифта на кнопке */
+    background-color: #05d0ac;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    /* Предотвращаем перенос текста на следующую строку */
+}
+
+.action-button:hover {
+    background-color: #ff6600;
+    /* Цвет кнопки при наведении */
+}
+
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #05d0ac;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    padding: 10px;
+        /* Увеличиваем отступы для стрелок */
+    font-size: 40px;
+        /* Увеличиваем размер шрифта для стрелок */
+}
+
+  
+.left-button {
+    left: 10px;
+}
+
+.right-button {
+    right: 10px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+        /* Увеличиваем расстояние между каруселью и индикаторами */
+        position: relative;
+        bottom: 10px;
+}
+
+.indicator {
+    width: 15px;
+        /* Увеличиваем размер индикаторов */
+        height: 15px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin: 0 7px;
+        /* Увеличиваем расстояние между индикаторами */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        will-change: background-color;
+}
+
+.indicator.active {
+    background-color: #05d0ac;
+}
+
+/* Стили для FAQ */
+.content-block-faq {
+    max-width: 1000px;
+    margin: 80px auto 50px;
+    /* Добавил единицу измерения (px) для нижнего отступа */
+    border: 1px solid #3d878f;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    position: relative;
+    
+
+}
+
+.header-faq {
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #05d0ac;
+    word-spacing: 15px;
+}
+
+.text-block-faq {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.main-text {
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+    color: #47655e;
+    margin-right: 50px;
+}
+
+.hidden-text {
+    display: none;
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #47655e;
+}
+
+.hr-faq {
+    border: 0;
+        /* Убираем стандартные стили рамки */
+    height: 2px;
+        /* Высота линии */
+    background: rgb(255, 255, 255);
+        /* Цвет линии */
+    margin-top: 30px;
+    padding-top: 0px;
+        /* Отступы сверху и снизу */
+    width: 100%;
+        /* Длина линии равна ширине родительского блока */
+        
+}
+
+/* Убираем горизонтальную линию у последнего текста */
+.last-hr {
+    display: none;
+}
+
+.toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    
+}
+
+.arrow {
+    font-size: 24px;
+    display: none;
+    color:#05d0ac;
+    
+}
+
+.down-arrow {
+    display: inline-block;
+    
+}
+
+.up-arrow {
+    display: none;
+}
+
+/* Стили для блока консультаций */
+.consultations-block {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    
+}
+
+.consultations-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #00f0bc;
+}
+
+.consultations-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.consultations-form label {
+    margin-bottom: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #47655e;
+}
+
+.consultations-form input,
+.consultations-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #05d0ac;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #00d6a2;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    /* Находится выше всего контента */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачный фон */
+}
+
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    /* Центрируем модальное окно */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 100%;
+    /* Ширина модального окна */
+    max-width: 300px;
+    /* Максимальная ширина */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+video {
+    width: 100%;
+    /* Видео занимает всю ширину модального окна */
+    height: auto;
+}
+
+/* Стили для модального окна с формой */
+#orderCallModal {
+    display: none;
+    /* Скрыто по умолчанию */
+    position: fixed;
+    /* Фиксированное позиционирование */
+    z-index: 1000;
+    /* Находится выше всего контента */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачный фон */
+    padding-bottom: 60px;
+}
+
+/* Стили для содержимого модального окна с формой */
+#orderCallModal .modal-content {
+    background-color: #00d6a2;
+    /* Зеленый фон */
+    margin: 15% auto;
+    /* Центрируем модальное окно */
+    padding: 20px;
+    border-radius: 15px;
+    /* Закругленные края */
+    width: calc(100% - 40px);
+    /* Учет отступов по бокам */
+    max-width: 600px;
+    /* Максимальная ширина */
+    color: #058078;
+    /* Цвет текста внутри модального окна */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Тень для модального окна */
+    position: relative;
+    /* Для позиционирования кнопки закрытия */
+    text-align: center;
+    /* Центрирование текста внутри модального окна */
+}
+
+/* Стили для кнопки закрытия в модальном окне с формой */
+#orderCallModal .close-button {
+    color: #fff;
+    /* Белый цвет кнопки закрытия */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#orderCallModal .close-button:hover,
+#orderCallModal .close-button:focus {
+    color: #ff6666;
+    /* Цвет при наведении */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стили для логотипа в модальном окне с формой */
+#orderCallModal .modal-logo {
+    display: block;
+    margin: 0 auto 20px;
+    /* Центрирование логотипа и отступ снизу */
+    max-width: 150px;
+    /* Максимальная ширина логотипа */
+}
+
+/* Стили для заголовка в модальном окне с формой */
+#orderCallModal .modal-content h2 {
+    color: #fff;
+    /* Белый цвет текста заголовка */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    /* Центрирование текста заголовка */
+    margin: 0 0 20px;
+    /* Отступ снизу */
+}
+
+/* Стили для формы */
+#orderCallForm {
+    display: flex;
+    flex-direction: column;
+    /* Вертикальное размещение элементов */
+    gap: 5px;
+    /* Отступ между элементами формы */
+    padding: 0 40px;
+    /* Отступы по бокам */
+    padding-bottom: 5px;
+    
+}
+
+/* Стили для меток (labels) */
+#orderCallForm label {
+    text-align: left;
+    color: #058078;
+    margin-bottom: 5px;
+    /* Отступ между меткой и полем */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* Стили для полей ввода и текстовых областей */
+#orderCallForm input,
+#orderCallForm textarea {
+    width: 100%;
+    color: #058078;
+    text-align: left;
+    margin-bottom: 15px;
+    /* Отступ между полями */
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+/* Стили для кнопки отправки */
+.submit-button {
+    background-color: #058078;
+    /* Темно-зеленый цвет */
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    margin: 20px auto 0;
+    /* Центрирование кнопки */
+    border-radius: 8px;
+    border: none;
+    width: 200px;
+    /* Ширина кнопки отправки */
+    padding: 10px 20px;
+    /* Отступы внутри кнопки */
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #ff6600;
+    /* Цвет кнопки при наведении */
+}
+
+/* Стили для текста под кнопкой */
+#orderCallModal .consent-text {
+    margin-top: 20px;
+    /* Отступ сверху */
+    font-size: 14px;
+    /* Размер шрифта */
+    color: #058078;
+    /* Цвет текста */
+    text-align: center;
+    /* Выравнивание текста по центру */
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+
+
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+footer {
+    padding-top: 50px;
+    background-color: #404849;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* Размещаем изображение сверху и блоки футера под ним */
+    align-items: center;
+    /* Центрируем изображение по горизонтали */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    /* Убедитесь, что футер имеет позиционирование */
+}
+
+.first-block1 {
+    margin-bottom: 20px;
+    /* Отступ снизу для разделения с блоками footer-block */
+    text-align: center;
+    position: relative;
+    /* Обязательно для абсолютного позиционирования дочернего элемента */
+    margin-right: 25px;
+}
+
+.first-block1 img {
+    width: 50px;
+    height: auto;
+    margin-top: -60px;
+    /* Сдвигаем вверх, чтобы выйти за пределы футера */
+    position: absolute;
+    /* Позволяет изображению выходить за пределы футера */
+    left: 50%;
+    /* Центрируем изображение по горизонтали */
+    transform: translateX(-50%);
+    /* Сдвигаем изображение на половину его ширины для центрирования */
+    z-index: 1;
+    /* Убедитесь, что изображение на переднем плане */
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* Распределяем блоки равномерно по ширине */
+    align-items: flex-start;
+    /* Выравниваем блоки по верхнему краю */
+    width: 100%;
+    max-width: 1600px;
+    /* Увеличиваем максимальную ширину футера */
+    padding: 0 40px;
+    /* Увеличиваем отступы по краям для большей "воздушности" */
+    gap: 40px;
+    /* Увеличиваем зазор между блоками */
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    /* Выравниваем изображение и текст по вертикали */
+    gap: 10px;
+    /* Отступ между изображением и текстом */
+    text-decoration: none;
+    /* Убираем подчеркивание у ссылки */
+    color: inherit;
+    /* Сохраняем текущий цвет текста */
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    word-spacing: 5px;
+    
+    
+}
+
+.footer-block {
+    flex: 1 1 30%;
+    /* Блоки будут автоматически раздвигаться и занимать больше пространства */
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    word-spacing: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+        /* Учитываем padding и border в ширину блоков 
+    border: 1px solid #a41919;*/
+}
+
+/* Стили для ссылок в футере */
+.footer-block a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /* Центрируем текст и иконки внутри ссылок */
+    text-decoration: none;
+    /* Убираем подчеркивание */
+    color: inherit;
+    /* Цвет текста остается таким же, как у родителя */
+    margin: 7px 0;
+    /* Отступ между ссылками */
+    padding: 0 15px;
+        /* Увеличиваем внутренний отступ по горизонтали */
+}
+
+
+
+/* Для последнего блока, чтобы задать отступ справа */
+.footer-block:last-child {
+    margin-right: 20px;
+    /* Задаем отступ справа для последнего блока */
+}
+
+
+/* Медиа-запрос для экранов меньше 768px */
+@media (max-width: 830px) {
+    .footer-content {
+        flex-direction: column;
+        /* Блоки спускаются вниз */
+        align-items: center;
+        /* Центрируем по горизонтали */
+        width: 100%;
+        /* Контейнер занимает всю ширину */
+        padding: 0 20px;
+        gap: 0px;
+        
+    }
+    .footer-block {
+        margin-bottom: 0px;
+        /* Отступ между блоками */
+        padding-left: 0;
+        /* Убираем левый отступ между блоками */
+        width: 100%;
+        /* Убедитесь, что блоки занимают всю ширину */
+        flex: 1 1 100%;
+        /* Блок занимает всю ширину на маленьких экранах */
+                
+    }
+
+        /* Стили для ссылок в футере */
+    .footer-block a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+            /* Центрируем контент по горизонтали и вертикали */
+        gap: 10px;
+            /* Отступ между изображением и текстом */
+        width: auto;
+        text-align: center;
+    }
+
+        /* Для последнего блока, чтобы задать отступ справа */
+    .footer-block:last-child {
+         margin-right: 0px;
+            /* Задаем отступ справа для последнего блока */
+    }
+
+    .first-block1 {
+        margin-right: 0px;
+    }
+
+    .footer-block img {
+        margin-right: 0;
+            /* Убираем отступ справа */
+    }
+}
+
+.servis {
+    align-items: flex-start;
+        /* Выравнивание блоков по верхнему краю */
+    display: flex;
+    justify-content: center;
+    /* Центрируем блоки */
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+    /* Для адаптации на мобильных устройствах */
+    align-items: stretch;
+        /* Делаем блоки одинаковой высоты */
+           
+        
+}
+
+.servis-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 45%;
+    /* Фиксированная ширина блоков при большом экране */
+    max-width: 500px;
+    /* Ограничиваем максимальную ширину */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: 0 2px 10px rgb(160, 236, 255);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /* Отступы между блоками */
+}
+
+/* Переход на мобильный вид, когда ширина экрана слишком мала */
+@media (max-width: 768px) {
+    .servis {
+        flex-direction: column;
+        align-items: center;
+        /* Центрирование блоков */
+        padding: 10px;
+        /* Снижаем внутренние отступы */
+    }
+
+    .servis-block {
+        width: 100%;
+        /* Блоки занимают всю ширину контейнера */
+        max-width: 100%;
+        /* Убираем ограничение по ширине */
+    }
+}
+
+.servis-block img {
+    margin-bottom: 15px;
+}
+
+.servis-block h1 {
+    margin-bottom: 15px;
+    padding-bottom: 0px;
+    color: #fff;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 36px;
+        word-spacing: 10px;
+        line-height: 1.5;
+}
+.servis-block h2 {
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    word-spacing: 10px;
+    line-height: 1.1;
+}
+
+.servis-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.servis-block ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    background-image: url('bullet.png');
+    /* Путь к изображению маркера */
+    background-size: 20px 20px;
+    /* Размер маркера */
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin: 0 auto;
+        /* Центрирование списка */
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    word-spacing: 5px;
+    line-height: 1.5;
+}
+
+.servis-list {
+    list-style-type: none;
+        /* Убираем стандартные маркеры списка */
+        padding-left: 0;
+        /* Убираем отступы слева */
+        text-align: center;
+        /* Выровнять весь список по центру */
+    
+}
+
+.servis-list li {
+    position: relative;
+    padding-left: 24px;
+    /* Отступ для маркера, если нужно */
+    text-align: left;
+    /* Текст внутри элемента списка выравнивается по левому краю */
+    padding-top: 12px;
+}
+
+.list-marker {
+    vertical-align: middle;
+    margin-right: 8px;
+    /* Отступ между маркером и текстом */
+    width: 24px;
+    /* Ширина изображения-маркера */
+    height: 24px;
+    /* Высота изображения-маркера */
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.servis-block h3 {
+    margin-bottom: 15px;
+    color: #ff4b04;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    word-spacing: 10px;
+    line-height: 1.3;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.servis-block span {
+color: #060252;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    word-spacing: 5px;
+    line-height: 1.5;
+}
+
+.play {
+    width: 50px;
+    /* Размер изображения 2 */
+    height: auto;
+    /* Сохраняет пропорции изображения */
+}
+
+.list-text {
+    font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        word-spacing: 5px;
+        line-height: 1.5;
+        color: #060252;
+}
+
+.call-text {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 28px;
+    word-spacing: 5px;
+    line-height: 1.5;
+
+}
+
+/* індівідуалні - нові */
+/* Основные стили для контейнера */
+.container-serv {
+    display: flex;
+    justify-content: space-between;
+    /* Пространство между блоками */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    align-items: center;
+        /* Вертикальное выравнивание */
+}
+
+/* Стили для левого и правого блока */
+.left-block-serv,
+.right-block-serv {
+   padding: 10px;
+}
+
+.left-block-serv {
+    text-align: center;
+    flex: 1;
+    
+}
+
+.right-block-serv {
+    text-align: left;
+    flex: 2;
+}
+
+.right-block-serv h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 0px;
+    color: #013054;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    word-spacing: 10px;
+    line-height: 1.5;
+    
+}
+
+.right-block-serv h2 {
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    word-spacing: 10px;
+    line-height: 1.1;
+}
+
+.right-block-serv h3 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 24px;
+    word-spacing: 10px;
+    line-height: 1.5;
+    border-radius: 8px;
+    border: 3px solid #02f3fb;
+        /* Указываем границу */
+    padding: 20px;
+    background-color: #00d6a2;
+    
+}
+
+.right-block-serv ul {
+    list-style-type: disc;
+    /* Маркированный список */
+    margin: 0;
+    padding-left: 20px;
+    /* Отступ для списков */
+}
+
+.right-block-serv li {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    word-spacing: 5px;
+    line-height: 1.5;
+}
+
+/* Стили для изображений разного размера */
+#img1 {
+    max-width: 230px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+#img2 {
+    max-width: 330px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+#img3 {
+    width: 360px;
+    height: auto;
+}
+
+#img4 {
+    width: 300px;
+    height: auto;
+}
+
+#img5 {
+    width: 370px;
+    height: auto;
+}
+
+/* Чередование блоков */
+.container-serv:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+
+
+.menu1 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    /* Добавляем позиционирование */
+}
+
+.menu1 a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    /* Расстояние до текста */
+    width: 100%;
+    border-bottom: 0.5px solid #ffffff;
+    /* Тонкая линия */
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+    padding-bottom: 4px;
+    /* Увеличение расстояния между линией и текстом */
+}
+
+.menu1 a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Стили для экранов больше 1200px */
+@media (min-width: 1201px) {
+    .menu {
+        display: flex;
+        /* Отображаем меню */
+    }
+
+    /* Скрываем кнопку звонка, заменяющую меню, для больших экранов */
+    .call-button-mob {
+        display: none;
+    }
+
+    /* Показываем правый блок с кнопкой звонка */
+    .call-button {
+        display: block;
+    }
+
+
+    .menu-icon-replacement {
+        display: none;
+        /* Скрываем заменяющие элементы */
+    }
+
+    .content-block-desktop {
+        display: block;
+    }
+
+    .content-block-tablet {
+        display: none;
+        /* Скрываем заменяющие элементы */
+    }
+
+    .content-desktop {
+        display: block;
+    }
+
+    .content-mob {
+        display: none;
+    }
+
+    .dex {
+        display: block;
+    }
+
+    .mob {
+        display: none;
+    }
+    .nmt {
+        margin-top: 50px;
+    }
+}
+
+/* Стили для экранов меньше 1200px */
+@media (max-width: 1200px) {
+
+    /* Скрываем обычное меню */
+    .menu {
+        display: none;
+    }
+
+    /* Показываем иконку меню вместо правого блока */
+    .menu-icon-replacement {
+        display: block;
+    }
+
+    .call-button {
+        margin-right: 10px;
+        margin-left: 40px;
+    }
+
+    .content-block {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        /* Выравнивание по центру по горизонтали */
+        text-align: left;
+        word-spacing: 10px;
+        padding: 0 20px;
+        position: relative;
+        /* Для вертикальной линии */
+    }
+
+    .content-block-desktop {
+        display: none;
+    }
+
+    .content-block-tablet {
+        display: block;
+        /* Скрываем заменяющие элементы */
+    }
+
+    .content-desktop {
+        display: block;
+    }
+
+    .content-mob {
+        display: none;
+    }
+
+    .dex {
+        display: block;
+    }
+
+    .mob {
+        display: none;
+    }
+
+    .three-blocks {
+        display: flex;
+        justify-content: space-between;
+        padding: auto;
+        margin-left: 50px;
+        margin-right: 50px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: #ffffff;
+    }
+
+    .text-block-bottom {
+        margin-bottom: 50px;
+        margin-top: 100px;
+        align-items: center;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 36px;
+        color: #02d6a8;
+        }
+
+}
+
+/* Стили для экранов меньше 1040px */
+@media (max-width: 1040px) {
+    .fon {
+        flex: 1;
+        flex-direction: column;
+
+        background-position: top;
+        /*фоновые изображения выравниваются вверху*/
+        background-size: cover;
+        /* Оригинальный размер изображений */
+        background-repeat: no-repeat;
+        /*Отключить повторение изображения */
+        background-image: url('fon_1.svg');
+        height: 2100px;
+        width: 100%;
+
+    }
+}
+
+/* Стили для экранов больше 1700px */
+@media (min-width: 1701px) {
+    .fon {
+        flex: 1;
+        flex-direction: column;
+
+        background-position: top;
+        /*фоновые изображения выравниваются вверху*/
+        background-size: cover;
+        /* Оригинальный размер изображений */
+        background-repeat: no-repeat;
+        /*Отключить повторение изображения */
+        background-image: url('fon_1.svg');
+        height: 1200px;
+        width: 100%;
+
+    }
+}
+
+/* Стили для экранов больше 1800px */
+@media (min-width: 1801px) {
+    .fon {
+        flex: 1;
+        flex-direction: column;
+
+        background-position: top;
+        /*фоновые изображения выравниваются вверху*/
+        background-size: cover;
+        /* Оригинальный размер изображений */
+        background-repeat: no-repeat;
+        /*Отключить повторение изображения */
+        background-image: url('fon_1.svg');
+        height: 1000px;
+        width: 100%;
+
+    }
+}
+
+/* Стили для экранов больше 900px */
+@media (min-width: 901px) {
+    .block-left {
+        display: block;
+    }
+
+    .block-right {
+        display: block;
+    }
+
+    .cat-container {
+        display: none;
+    }
+}
+
+/* Меню для экранов меньше 900 пикселей */
+@media (max-width: 900px) {
+    #expandedContent {
+        display: flex;
+        position: absolute;
+        /* Абсолютное позиционирование */
+        top: 100%;
+        /* Начало сразу под нерасширенным меню */
+        right: 0;
+        /* Привязываем к правому краю */
+        left: auto;
+        /* Убираем привязку к левому краю */
+        width: 280px;
+        background: #1a97b3;
+        color: white;
+        padding: 20px;
+        justify-content: space-around;
+        z-index: 0;
+        /* Убедитесь, что оно ниже основного меню */
+        box-shadow: 0px 7px 10px rgba(1, 36, 26, 0.4);
+    }
+
+    #expandedContent a {
+        display: block;
+        /* Располагаем ссылки в столбик */
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        text-align: left;
+
+    }
+
+    #expandedContent a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .call-button {
+        display: none;
+    }
+
+    .image-block img {
+        height: 45px;
+        width: auto;
+        /* Сохранение пропорций */
+    }
+
+    .content-desktop {
+        display: none;
+    }
+
+    .content-mob {
+        display: block;
+    }
+
+    .content-block-desktop {
+        display: none;
+    }
+
+    .content-block-tablet {
+        display: none;
+        /* Скрываем заменяющие элементы */
+    }
+
+    .kont {
+        margin-top: 10px;
+        /* Можно регулировать дополнительное пространство между блоками */
+
+    }
+
+    .dex {
+        display: none;
+    }
+
+    .mob {
+        display: block;
+    }
+    .block-left {
+    display: none;
+    }
+
+    .block-right {
+    display: none;
+    }
+
+    .cat-container {
+    display: block;
+    }
+
+    .center-container {
+    display: none;
+    }
+
+    .three-blocks {
+        display: flex;
+        justify-content: space-between;
+        padding: auto;
+        margin-left: 50px;
+        margin-right: 50px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        color: #ffffff;
+    }
+
+}
+
+/* Меню для экранов меньше 768 пикселей */
+@media (max-width: 768px) {
+    .text-block-1 {
+        transition-delay: 0.5s;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 32px;
+        line-height: 35px;
+        color: #fff;
+        margin-top: 30px;
+    }
+    .text-block-2 {
+        transition-delay: 0.8s;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 30px;
+        word-spacing: 10px;
+        color: #fff;
+        text-align: center;
+    }
+        
+    .text-block-3 {
+        transition-delay: 1.0s;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 25px;
+        word-spacing: 2px;
+        color: #013054;
+    }
+
+    .nmt {
+        margin-top: 70px;
+        align-items: center;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 20px;
+        color: #ffffff;
+    }
+    
+    .nmt h3 {
+        align-items: center;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 28px;
+        color: #9cf4fa;
+        margin-bottom: 10px;
+    }
+
+    .three-blocks {
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+
+    .block {
+        flex: 0 0 60%;
+        margin-left: 0;
+            /* Убираем отступы слева */
+        margin-right: 0;
+            /* Убираем отступы справа */
+    }
+        
+    .three-blocks a {
+        flex: 0 0 60%;
+        
+    }
+    .text-block-bottom {
+        margin-bottom: 50px;
+        margin-top: 100px;
+        align-items: center;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 24px;
+        color: #02d6a8;
+    }
+
+    .slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+            /* Подтягиваем содержимое к началу */
+        min-width: 100%;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        word-spacing: 2px;
+        line-height: 1.5;
+        color: #5f949b;
+    }
+
+    /* Стиль для кнопки с текстом */
+    .toggle-button {
+        background: transparent;
+            /* Прозрачный фон */
+        border: 1px solid #ff6600;
+        border-radius: 20px;
+        color: #908a85;
+            /* Зеленый текст */
+        font-size: 14px;
+            /* Размер шрифта */
+        cursor: pointer;
+            /* Курсор руки */
+        padding: 5px;
+            /* Убираем внутренние отступы */
+        margin: 0;
+            /* Убираем внешние отступы */
+        display: inline-flex;
+            /* Вложенные элементы */
+        align-items: center;
+            /* Вертикальное выравнивание */
+    }       
+    
+    .image-and-text img {
+        width: 70px;
+        height: auto;
+        margin-right: 30px;
+    
+    }
+     
+    .image-and-text p {
+         margin-top: 20px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 12px;
+        color: #1a5d66;
+    
+    }
+    .header-faq {
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #05d0ac;
+        word-spacing: 15px;
+    }
+
+    .main-text {
+        margin-bottom: 10px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        color: #47655e;
+    }
+    
+    .hidden-text {
+        display: none;
+        margin-top: 20px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        color: #47655e;
+    }
+
+    
+
+}
+
+/* Адаптивные стили для первого блока */
+@media screen and (max-width: 768px) {
+    .container-serv:first-child {
+        flex-direction: column;
+    }
+
+    .container-serv:first-child .left-block-serv,
+    .container-serv:first-child .right-block-serv {
+        padding: 10px 0;
+    }
+
+    /* Общие адаптивные стили для остальных блоков */
+    .container-serv:not(:first-child) {
+        flex-direction: column;
+    }
+
+    .container-serv:not(:first-child) .left-block-serv,
+    .container-serv:not(:first-child) .right-block-serv {
+        padding: 10px 0;
+    }
+
+    .right-block-serv h1 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding-bottom: 0px;
+        color: #013054;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        word-spacing: 3px;
+        line-height: 1.5;
+
+    }
+
+    .right-block-serv h2 {
+        margin-bottom: 10px;
+        color: #fff;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        word-spacing: 3px;
+        line-height: 1.1;
+    }
+
+    .right-block-serv h3 {
+        margin-bottom: 10px;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 16px;
+        word-spacing: 10px;
+        line-height: 1.5;
+        border-radius: 8px;
+        border: 3px solid #02f3fb;
+        /* Указываем границу */
+        padding: 20px;
+        background-color: #00d6a2;
+
+    }
+
+    .right-block-serv ul {
+        list-style-type: disc;
+        /* Маркированный список */
+        margin: 0;
+        padding-left: 20px;
+        /* Отступ для списков */
+    }
+
+    .right-block-serv li {
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 14px;
+        word-spacing: 5px;
+        line-height: 1.5;
+    }
+
+    /* Стили для изображений разного размера */
+    #img1 {
+        max-width: 130px;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+
+    #img2 {
+        max-width: 210px;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+
+    #img3 {
+        width: 200px;
+        height: auto;
+    }
+
+    #img4 {
+        width: 170px;
+        height: auto;
+    }
+
+    #img5 {
+        width: 200px;
+        height: auto;
+    }
+
+    .play {
+        width: 30px;
+        /* Размер изображения 2 */
+        height: auto;
+        /* Сохраняет пропорции изображения */
+    }
+
+    .list-text {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        word-spacing: 5px;
+        line-height: 1.5;
+        color: #060252;
+    }
+
+    .call-text {
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 20px;
+        word-spacing: 5px;
+        line-height: 1.5;
+
+    }
+
+    .menu1 a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 1px;
+        position: relative;
+        /* Добавляем позиционирование */
+    }
+}
+
+/* Меню для экранов больше 500 пикселей */
+@media (min-width: 501px) {
+
+    .hidden-on-small {
+        display: block;
+            /* Скрываем только слово "ВАШ" на малых экранах */
+    }
+    .subject-mob {
+    display: none;
+    }
+
+    .subject {
+        display: block;
+    }
+}
+
+/* Меню для экранов меньше 500 пикселей */
+@media (max-width: 500px) {
+    .mob {
+    display: none;
+    }
+
+    .hidden-on-small {
+        display: none;
+            /* Скрываем только слово "ВАШ" на малых экранах */
+    }
+
+    .subject {
+        display: none;
+        
+    }
+    
+   .subject-mob {
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
+        word-spacing: 5px;
+        line-height: 1.2;
+   }
+
+   .text-container {
+    margin-left: 15px;
+    margin-right: 15px;
+   }
+   
+    .menu-icon-replacement {
+        width: 30px;
+            /* При необходимости, изменяем размер иконки */
+        height: auto;
+    }
+
+    #expandButton {
+        position: fixed;
+        left: 290px;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+            /* Расстояние между элементами */
+    }
+    
+    .image-block img {
+        height: 40px;
+        width: auto;
+            /* Сохранение пропорций */
+    }
+    
+    .vertical-line {
+        width: 1px;
+        height: 50px;
+            /* Высота полоски */
+        background-color: #fff;
+            /* Цвет полоски */
+    }
+
+    .three-blocks a {
+        flex: 0 0 90%;
+    }
+}
+
