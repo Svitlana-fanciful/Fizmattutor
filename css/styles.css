@@ -993,21 +993,25 @@ font-size: 40px;
 color: #00f0bc;
 }
 
-.tube-button button {
-    background: #ff6600;
-    color: white;
-    border: none;
+.button-link {
+    display: inline-block;
     padding: 10px 20px;
-    margin-right: 0px;
-    margin-top: 50px;
-    cursor: pointer;
-    border-radius: 10px;
-    /* Скругление углов кнопки */
+    background-color: #ff6600;
+    /* оранжевый цвет кнопки */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    font-style: normal;
-    font-size: 24px;
+    font-size: 20px;
+    border: 1px solid white;
+        /* граница 1px белая */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+.button-link:hover {
+    background-color: #0056b3;
 }
 
 /* Контейнер для карусели */
