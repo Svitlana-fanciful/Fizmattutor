@@ -647,7 +647,8 @@ animation: fadeInMoveRight 2s forwards;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    }
+}
+
 hr {
     border: none;
     /* Убираем стандартную рамку */
@@ -848,7 +849,7 @@ margin-top: 25px;
 }
 
 /* Возвращаем первоначальный стиль кнопки при наведении на неё */
-.horizontal-block button:hover {
+.horizontal-block а:hover {
     background-color: #05d0ac;
     border: none;
     color: white;
