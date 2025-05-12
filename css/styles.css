@@ -52,7 +52,6 @@ body {
     height: 100%;
     margin-top: 100px;
     padding: 0px;
-    border: 1px solid #a41919;
     width: 100%;
 }
     
@@ -68,7 +67,6 @@ body {
      margin-top: 0px;
      padding-top: 0px;
      padding-bottom: 50px;
-    border: 1px solid #1532d5;
     width: 100%;
     margin-bottom: -20px;
     margin-top: 0px;
@@ -723,11 +721,6 @@ justify-content: center;
 margin-top: 20px;
 flex-wrap: wrap;
 /* Разрешить перенос блоков на новую строку */
-border-width: 5;
-border-color: rgb(175, 241, 155);
-
-border-style: solid;
-
 }
 
 .horizontal-block {
@@ -911,11 +904,21 @@ margin-top: 25px;
     align-items: center;
     text-align: center;
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
-    font-size: 36px;
-    color: #9cf4fa;    
+    font-size: 40px;
+    color: #016e5e;    
     margin-bottom: 10px;
+    background-color: #ffffff;
+        /* серый фон */
+        display: inline-block;
+        /* ширина под контент */
+        padding: 5px 15px;
+        /* отступы по желанию */
+        border-radius: 5px;
+        /* закругление углов, опционально */
+        border: 1px solid #016455;
+        /* рамка 1px того же цвета, что текст */
 }
 
 .horizontal-line {
@@ -1227,12 +1230,12 @@ color: #00f0bc;
 }
 
 .indicator {
-    width: 15px;
+    width: 10px;
         /* Увеличиваем размер индикаторов */
-        height: 15px;
+        height: 10px;
         background-color: #ddd;
         border-radius: 50%;
-        margin: 0 7px;
+        margin: 0 5px;
         /* Увеличиваем расстояние между индикаторами */
         cursor: pointer;
         transition: background-color 0.3s ease;
@@ -2496,8 +2499,18 @@ color: #060252;
         font-weight: 400;
         font-style: normal;
         font-size: 28px;
-        color: #9cf4fa;
-        margin-bottom: 10px;
+        color: #016e5e;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            /* серый фон */
+            display: inline-block;
+            /* ширина под контент */
+            padding: 5px 15px;
+            /* отступы по желанию */
+            border-radius: 5px;
+            /* закругление углов, опционально */
+            border: 1px solid #016455;
+            /* рамка 1px того же цвета, что текст */
     }
 
     .three-blocks {
