@@ -898,6 +898,20 @@ margin-top: 25px;
     font-size: 28px;
     color: #ffffff;
 }
+.lightgraybox {
+  background-color: rgb(240, 241, 243);/* светло-серый фон */
+  width: 80%;
+  margin: 0 auto; /* центрирует блок */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+  text-align: center; /* Центрует сам <ul> */
+}
 
 .nmt h3{
     margin-top: 50px;
@@ -920,6 +934,37 @@ margin-top: 25px;
         border: 1px solid #016455;
         /* рамка 1px того же цвета, что текст */
 }
+.responsive-img {
+  max-width: 250px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.tutor{
+    margin-top: 0px;
+    align-items: center;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 26px;
+    color: #016e5e;    
+    margin-bottom: 0px;
+}
+
+.tutormat{
+    color: #3c423d;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    word-spacing: 5px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
 
 .horizontal-line {
     border: 0;
@@ -927,6 +972,18 @@ margin-top: 25px;
     height: 2px;
     /* Высота линии */
     background: rgb(153, 236, 255);
+    /* Цвет линии */
+    margin-top: 5px;
+    padding-top: 0px;
+    /* Отступы сверху и снизу */
+}
+
+.horizontal-line1 {
+    border: 0;
+    /* Убираем стандартные стили рамки */
+    height: 2px;
+    /* Высота линии */
+    background: rgb(36, 230, 181);
     /* Цвет линии */
     margin-top: 5px;
     padding-top: 0px;
@@ -1028,7 +1085,7 @@ color: #00f0bc;
     overflow: hidden;
     height: auto;
         /* Убедитесь, что контейнер имеет фиксированную высоту */
-        border: 1px solid #1532d5;
+        
         
 }
 
@@ -2861,6 +2918,13 @@ color: #060252;
         height: 50px;
             /* Высота полоски */
         background-color: #fff;
+            /* Цвет полоски */
+    }
+
+    .three-blocks a {
+        flex: 0 0 90%;
+    }
+}
             /* Цвет полоски */
     }
 
