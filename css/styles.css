@@ -1114,6 +1114,11 @@ color: #00f0bc;
     color: #5f949b;
 }
 
+.carousel:focus,
+.slide:focus {
+  outline: none;
+}
+
 .top-block {
     padding-bottom: 10px;
     padding-left: 60px;
