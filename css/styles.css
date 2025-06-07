@@ -965,6 +965,24 @@ margin-top: 25px;
     margin-bottom: 10px;
     margin-top: 0px;
 }
+.tutormat1{
+    color: #3c423d;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+    word-spacing: 5px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    margin-top: 0px;
+.centered-list{
+    display: inline-block; /* Чтобы список был как "встроенный блок" */
+    text-align: left;     /* Выровнять текст внутри <li> по правому краю */
+    list-style-position: inside; /* Маркеры идут внутри блока */
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+}
 
 .horizontal-line {
     border: 0;
