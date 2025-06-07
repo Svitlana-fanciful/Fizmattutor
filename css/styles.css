@@ -2598,6 +2598,19 @@ color: #060252;
             /* рамка 1px того же цвета, что текст */
     }
 
+    .tutormat1{
+    color: #3c423d;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    word-spacing: 5px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    margin-top: 0px;
+
+}
+
     .three-blocks {
         flex-wrap: wrap;
         justify-content: center;
