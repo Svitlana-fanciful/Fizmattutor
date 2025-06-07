@@ -1112,6 +1112,9 @@ color: #00f0bc;
     word-spacing: 5px;
     line-height: 1.5;
     color: #5f949b;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .carousel:focus,
