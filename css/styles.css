@@ -975,7 +975,9 @@ margin-top: 25px;
     line-height: 1.5;
     margin-bottom: 10px;
     margin-top: 0px;
-.centered-list{
+}
+
+    .centered-list{
     display: inline-block; /* Чтобы список был как "встроенный блок" */
     text-align: left;     /* Выровнять текст внутри <li> по правому краю */
     list-style-position: inside; /* Маркеры идут внутри блока */
