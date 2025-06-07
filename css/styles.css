@@ -985,11 +985,25 @@ margin-top: 25px;
     margin: 0;
     font-weight: 400;
 }
+.contact-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  word-spacing: 5px;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
   gap: 30px; /* расстояние между ссылками */
   margin-top: 20px;
+  padding-bottom: 10px;
   flex-wrap: wrap; /* позволяет перенос на моб устройствах */
 }
 
