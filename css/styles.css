@@ -985,6 +985,13 @@ margin-top: 25px;
     margin: 0;
     font-weight: 400;
 }
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* расстояние между ссылками */
+  margin-top: 20px;
+  flex-wrap: wrap; /* позволяет перенос на моб устройствах */
+}
 
 .horizontal-line {
     border: 0;
